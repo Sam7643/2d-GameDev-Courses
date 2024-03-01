@@ -1,20 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfrp0km2xjcr6"]
+[gd_scene load_steps=8 format=3 uid="uid://dfrp0km2xjcr6"]
 
 [ext_resource type="Script" path="res://game.gd" id="2"]
 [ext_resource type="TileSet" uid="uid://crkgfdw1y80hc" path="res://levels/rooms/tileset_bridges.tres" id="2_vnf5n"]
 [ext_resource type="TileSet" uid="uid://cqb2wtrubw0n6" path="res://levels/rooms/tileset_invisible_walls.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://dds7yrrx56gcy" path="res://player/player.tscn" id="4_jmr2m"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="5_afc7e"]
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="6_ks7ng"]
+[ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="7_opm52"]
 
 [node name="Start" type="Node2D"]
+position = Vector2(-276.809, -381.121)
 script = ExtResource("2")
 
 [node name="Bridges" type="TileMap" parent="."]
 tile_set = ExtResource("2_vnf5n")
 format = 2
 layer_0/name = "Bridges"
+layer_0/tile_data = PackedInt32Array(2, 65536, 1, 3, 0, 1, 4, 0, 1, 5, 131072, 1, -851962, 327680, 1, -720890, 196608, 1, -786426, 196608, 1, -589818, 131072, 0, -655354, 196608, 1, -589817, 0, 1, -589813, 0, 1, -589814, 0, 1, -589815, 0, 1, -589816, 0, 1, -589811, 0, 0, -589812, 0, 1, -458739, 196608, 1, -524275, 196608, 1, -393203, 196608, 1, -327667, 262144, 1)
 metadata/_edit_lock_ = true
 
 [node name="InvisibleWalls" type="TileMap" parent="."]
 tile_set = ExtResource("3")
 format = 2
 layer_0/name = "Invisible walls"
+layer_0/tile_data = PackedInt32Array(65540, 0, 0, 65539, 0, 0, -65532, 0, 0, -65533, 0, 0, -786427, 0, 0, -720891, 0, 0, -655355, 0, 0, -589819, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -458740, 0, 0, -393204, 0, 0, -393202, 0, 0, -458738, 0, 0, -524274, 0, 0, -589810, 0, 0, -655346, 0, 0, -655347, 0, 0, -655348, 0, 0, -655349, 0, 0, -655350, 0, 0, -655351, 0, 0, -655352, 0, 0, -655353, 0, 0, -720889, 0, 0, -786425, 0, 0)
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("4_jmr2m")]
+
+[node name="RoomA" parent="." instance=ExtResource("5_afc7e")]
+position = Vector2(-1152, -512)
+
+[node name="RoomB" parent="." instance=ExtResource("6_ks7ng")]
+position = Vector2(788, -525)
+
+[node name="RoomC" parent="." instance=ExtResource("7_opm52")]
+position = Vector2(-376, -3076)
