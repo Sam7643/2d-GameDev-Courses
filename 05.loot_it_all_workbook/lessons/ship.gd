@@ -4,6 +4,7 @@ var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
 var health := 10
+var gem_count := 0
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
@@ -26,8 +27,16 @@ func _process(delta: float) -> void:
 		get_node("Sprite2D").rotation = velocity.angle()
 
 func set_health(new_health: int) -> void:
+	
 	health = new_health
 	get_node("UI/HealthBar").value = health
 	
+func set_gem_count(new_gem_count: int) -> void:
+	gem_count = new_gem_count
+	get_node("UI/GemCount").text = "x" + str(gem_count)
+	
 func _on_area_entered(area_that_entered: Area2D) -> void:
-	set_health(health + 10)
+	if area_that_entered.is_in_group("gem"):
+		set_gem_count(gem_count + 1)
+	elif area_that_entered.is_in_group("healing_item"):
+		set_health(health + 10)
