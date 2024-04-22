@@ -16,7 +16,7 @@ shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 5.0
 shader_parameter/viewport_scale = Vector2(1, 1)
 
-[sub_resource type="Animation" id="Animation_t0fgf"]
+[sub_resource type="Animation" id="Animation_2v461"]
 resource_name = "open"
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -28,10 +28,10 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -9), Vector2(62, -63), Vector2(113, 75)]
+"values": [Vector2(1, -9), Vector2(117, -65), Vector2(127, 74)]
 }
 
-[sub_resource type="Animation" id="Animation_qqbvy"]
+[sub_resource type="Animation" id="Animation_7ncc2"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,13 +43,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2.08165e-12, -40)]
+"values": [Vector2(1, -9)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgpti"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0x0lj"]
 _data = {
-"RESET": SubResource("Animation_qqbvy"),
-"open": SubResource("Animation_t0fgf")
+"RESET": SubResource("Animation_7ncc2"),
+"open": SubResource("Animation_2v461")
 }
 
 [node name="Chest" type="Area2D"]
@@ -68,7 +68,7 @@ position = Vector2(1, 5)
 texture = ExtResource("1_dx0lc")
 
 [node name="Top" type="Sprite2D" parent="CanvasGroup"]
-position = Vector2(2.08165e-12, -40)
+position = Vector2(1, -9)
 texture = ExtResource("2_gyljb")
 
 [node name="Lock" type="Sprite2D" parent="CanvasGroup"]
@@ -77,5 +77,5 @@ texture = ExtResource("3_keerc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rgpti")
+"": SubResource("AnimationLibrary_0x0lj")
 }
