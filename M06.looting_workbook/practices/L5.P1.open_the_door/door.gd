@@ -15,4 +15,4 @@ func _input_event(viewport: Node, event: InputEvent, shape_index: int):
 		)
 
 	if event_is_mouse_click:
-		open()
+		pass
