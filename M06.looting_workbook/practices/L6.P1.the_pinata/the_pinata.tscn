@@ -1,16 +1,13 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://b57s3p4chht6v"]
 
 [ext_resource type="PackedScene" path="res://practices/L6.P1.the_pinata/balloon_pinata.tscn" id="1_33y8y"]
-[ext_resource type="Script" path="res://practices/L6.P1.the_pinata/balloon_pinata.gd" id="2_qwpvp"]
+[ext_resource type="PackedScene" path="res://practices/L6.P1.the_pinata/candy/candy.tscn" id="2_4csd1"]
 
 [node name="ThePiñata" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="BalloonPinata" type="Area2D" parent="." instance=ExtResource("1_33y8y")]
-position = Vector2(960, 540)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("2_qwpvp")
+[node name="BalloonPinata" parent="." instance=ExtResource("1_33y8y")]
+possible_items = Array[PackedScene]([ExtResource("2_4csd1")])
 
 [node name="ExtraVisuals" type="Node" parent="."]
 
@@ -28,3 +25,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.152941, 0.168627, 0.188235, 1)
+
+[node name="Candy" parent="." instance=ExtResource("2_4csd1")]
